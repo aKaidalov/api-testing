@@ -52,7 +52,7 @@ Adding abstraction and additional functionality atop third party library.
 - Add a layer of abstraction to hide setup and repetitive tasks
 - Framework enables to efficiently build requests and handle API calls
 - Write tests using custom developed framework (better readability)
-- Flexible to test data management
+- Flexible to manage and use test data
 
 ### Tests
 
