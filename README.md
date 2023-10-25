@@ -13,15 +13,15 @@ an Open API called [Restful Booker](https://restful-booker.herokuapp.com/apidoc/
 1. Let's write some tests without a robust framework
 1. Let's create a framework
 
-## Exercise 1: Get to know Restful Booker API
+### Exercise 1: Get to know Restful Booker API
 
-### Endpoints:
+#### Endpoints:
 
 - GET booking
 - GET booking/{id}
 - POST booking
 
-### Tests
+#### Tests
 
 - get all bookings should return 200
 - get booking by id should return 200
@@ -29,15 +29,15 @@ an Open API called [Restful Booker](https://restful-booker.herokuapp.com/apidoc/
 - post booking response should contain id
 - post booking response should contain booking
 
-## Exercise 2: Tests without automation framework
+### Exercise 2: Tests without automation framework
 
 Using third party library core functionality.
 
-## Exercise 3: Let's create a framework
+### Exercise 3: Let's create a framework
 
 Adding abstraction and additional functionality atop third party library.
 
-### Framework functionality
+#### Framework functionality
 
 - Efficient way to communicate with API
 - Efficient way to add payload
