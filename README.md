@@ -57,7 +57,7 @@ Adding abstraction and additional functionality atop third party library.
 ### Tests
 
 - post authentication with correct credentials returns 200
-- post authentication with incorrect credentials returns 401
+- post authentication with incorrect credentials returns error message "Bad credentials"
 - post authentication returns token
 - post booking with wrong Accept header returns 418
 - put booking should return 200
