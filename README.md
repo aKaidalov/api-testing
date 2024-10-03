@@ -5,7 +5,7 @@ an Open API called [Restful Booker](https://restful-booker.herokuapp.com/apidoc/
 
 # Prerequisites
 
-- JDK 17
+- JDK 21
 
 ## Exercises
 
