@@ -1,20 +1,23 @@
 package api_testing.smoke;
 
+import api_testing.controller.BookingApi;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SmokeTests {
     public static final String API_URL = "https://restful-booker.herokuapp.com/booking";
 
     @Test
     public void whenGetBookingIdsIsCalled_thenReturnHttp200() {
-        given()
-                .when()
-                .get(API_URL)
-                .then()
-                .statusCode(200);
+        BookingApi bookingApi = new BookingApi();
+
+        Response getBookingResponse = bookingApi.getAllBookings();
+
+        assertThat(getBookingResponse.getStatusCode()).isEqualTo(200);
     }
 
     @Test
