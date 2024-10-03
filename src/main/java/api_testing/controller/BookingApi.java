@@ -30,4 +30,14 @@ public class BookingApi {
                 .log().body()
                 .extract().response();
     }
+
+    public Response getBooking(Integer bookingid) {
+        return given()
+                .when()
+                .get(API_URL + "/" + bookingid)
+                .then()
+                .log()
+                .body()
+                .extract().response();
+    }
 }
