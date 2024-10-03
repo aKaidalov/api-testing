@@ -1,0 +1,42 @@
+image: gradle:8.5.0-jdk21
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+stages:
+  - build
+  - test
+
+before_script:
+  - GRADLE_USER_HOME="$(pwd)/.gradle"
+  - export GRADLE_USER_HOME
+
+build:
+  stage: build
+  script: gradle --build-cache assemble
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: push
+    paths:
+      - build
+      - .gradle
+
+tests_smoke:
+  stage: test
+  script: gradle test --tests "api_testing.smoke.*"
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: pull
+    paths:
+      - build
+      - .gradle
+
+tests_e2e:
+  stage: test
+  script: gradle test --tests "api_testing.e2e.*"
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: pull
+    paths:
+      - build
+      - .gradle
