@@ -13,4 +13,10 @@ public class AuthTests {
         Response response = AuthApi.login("admin", "password123");
         assertThat(response.getStatusCode()).isEqualTo(200);
     }
+
+    @Test
+    public void whenPostAuthenticationWithIncorrectCredentials_thenReturnBadCredentials() {
+        Response response = AuthApi.login("wrongUser", "wrongPassword");
+        assertThat(response.jsonPath().getString("reason")).isEqualTo("Bad credentials");
+    }
 }
