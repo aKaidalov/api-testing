@@ -1,5 +1,16 @@
 package api_testing.auth;
 
+import api_testing.controller.AuthApi;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 public class AuthTests {
 
+    @Test
+    public void whenPostAuthenticationWithCorrectCredentials_thenReturnHttp200() {
+        Response response = AuthApi.login("admin", "password123");
+        assertThat(response.getStatusCode()).isEqualTo(200);
+    }
 }
