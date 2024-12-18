@@ -68,4 +68,18 @@ public class BookingApi extends BaseApi {
                 .then()
                 .extract().response();
     }
+
+    public Response updateBooking(int bookingId, Booking updatedBooking, String token) {
+        return given()
+                .contentType(JSON.toString())
+                .accept(JSON.toString())
+                .header("Cookie", "token=" + token)
+                .body(updatedBooking)
+                .log().body()
+                .when()
+                .put(API_URL + "/" + bookingId)
+                .then()
+                .log().body()
+                .extract().response();
+    }
 }
