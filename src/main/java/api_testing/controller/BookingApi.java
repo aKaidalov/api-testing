@@ -1,6 +1,7 @@
 package api_testing.controller;
 
 import api_testing.dto.Booking;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -21,6 +22,19 @@ public class BookingApi extends BaseApi {
         return given()
                 .contentType(JSON.toString())
                 .accept(JSON.toString())
+                .body(booking)
+                .log().body()
+                .when()
+                .post(API_URL)
+                .then()
+                .log().body()
+                .extract().response();
+    }
+
+    public Response createBooking(Booking booking, ContentType acceptanceHeader) {
+        return given()
+                .contentType(JSON.toString())
+                .accept(acceptanceHeader.toString())
                 .body(booking)
                 .log().body()
                 .when()
