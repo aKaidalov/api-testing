@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.JSON;
 
 public class AuthApi extends BaseApi {
     public static final String API_URL = BASE_API_URL + "/auth";
@@ -17,7 +18,7 @@ public class AuthApi extends BaseApi {
         authentication.setPassword(PASSWORD);
 
         Response authResponse = given()
-                .header("Content-Type", ContentType.JSON.toString())
+                .header("Content-Type", JSON.toString())
                 .body(authentication)
                 .log()
                 .headers()
@@ -33,5 +34,19 @@ public class AuthApi extends BaseApi {
                 .extract().response();
 
         return authResponse.getBody().jsonPath().getString("token");
+    }
+
+    public static Response login(String username, String password) {
+        Authentication authentication = new Authentication(username, password);
+
+        return given().contentType(JSON)
+                .accept(JSON.toString())
+                .body(authentication)
+                .when()
+                .post(API_URL).then()
+                .log()
+                .body()
+                .and()
+                .extract().response();
     }
 }
