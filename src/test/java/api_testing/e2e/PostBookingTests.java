@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 
 public class PostBookingTests {
 
-    private BookingApi bookingApi = new BookingApi();
+    private BookingApi bookingApi;
 
     @BeforeEach
     public void initializeBookingApi() {
