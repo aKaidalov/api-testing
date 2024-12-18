@@ -6,11 +6,9 @@ import api_testing.dto.Booking;
 import api_testing.dto.BookingResponse;
 import api_testing.generator.BookingGenerator;
 import io.restassured.response.Response;
-import org.codehaus.groovy.ast.stmt.ReturnStatement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.net.ssl.SSLEngineResult;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

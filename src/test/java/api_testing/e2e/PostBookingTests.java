@@ -5,12 +5,10 @@ import api_testing.dto.Booking;
 import api_testing.generator.BookingGenerator;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static io.restassured.RestAssured.given;
 
 public class PostBookingTests {
 

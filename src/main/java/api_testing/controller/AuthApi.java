@@ -1,7 +1,6 @@
 package api_testing.controller;
 
 import api_testing.dto.Authentication;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
