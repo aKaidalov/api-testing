@@ -1,5 +1,7 @@
 # API Testing with REST Assured
 
+>Project author: Aleksandr Kaidalov 223348IADB
+
 We are going to be learning API testing with REST Assured, and the software under test will be  
 an Open API called [Restful Booker](https://restful-booker.herokuapp.com/apidoc/index.html).
 
